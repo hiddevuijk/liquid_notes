@@ -1,0 +1,88 @@
+\documentclass[a4paper,11pt]{article}
+\pdfoutput=1 % if your are submitting a pdflatex (i.e. if you have
+             % images in pdf, png or jpg format)
+
+\usepackage{jheppub} % for details on the use of the package, please
+                     % see the JHEP-author-manual
+
+\usepackage[T1]{fontenc} % if needed
+
+
+\newcommand{\pp}{\boldsymbol{p}}
+\newcommand{\rr}{\boldsymbol{r}}
+\newcommand{\rhon}{\ensuremath{\rho^{(n)}(\rr_1, \dots , \rr_n)}}
+\newcommand{\rhos}{\ensuremath{\rho^{(1)}(\rr_1)}}
+\newcommand{\rhoss}{\ensuremath{\rho^{(2)}(\rr_1,\rr_2)}}
+
+\title{Statistical Mechanics of Liquids}
+
+
+%% %simple case: 2 authors, same institution
+%% \author{A. Uthor}
+%% \author{and A. Nother Author}
+%% \affiliation{Institution,\\Address, Country}
+
+% more complex case: 4 authors, 3 institutions, 2 footnotes
+\author[a]{Hidde Vuijk}
+\author[a,b]{Abhinav Sharma}
+
+% The "\note" macro will give a warning: "Ignoring empty anchor..."
+% you can safely ignore it.
+
+\affiliation[a]{Leibniz-Institut f\"ur Polymerforschung, Dresden, Germany}
+\affiliation[b]{TU Dresden}
+
+% e-mail addresses: one for each author, in the same order as the authors
+\emailAdd{vuijk@ipfdd.de}
+\emailAdd{sharma@ipfdd.de}
+
+
+
+
+\abstract{Abstract...}
+
+
+
+\begin{document} 
+\maketitle
+\flushbottom
+
+\newpage
+\section{Introduction}\
+\subsection{Course Outline}
+
+\newpage
+\section{Basic Statistical Mechanics}\label{sec:basic}
+
+some intro
+
+\subsection{Ensembles}\label{sec:enembles}
+\subsection{Perfect Gasses}\label{sec:perfect}
+\newpage
+\section{Imperfect Gasses}\label{sec:imperfect}
+
+\newpage
+\section{Distribution Functions}\label{sec:distribution}
+\input{sections/distribution}
+
+\newpage
+\section{Integral Equations for $g(r)$}\label{sec:integral}
+\subsection{The Kirkwood Equation}\label{ssec:kirkwood}
+\input{sections/kirkwood}
+\subsection{The Born-Green-Yvon Equation}\label{ssec:born}
+
+\newpage
+\section{Perturbation Theory}
+\subsection{General Theory and the Van Der Waals Equation}
+\subsection{Barker-Henderson Theory}
+\subsection{Chandler-Weeks-Anderson Theory}
+
+\newpage
+\section{Continuum Mechanics}
+\subsection{Phenomenological Theory}
+\subsection{Statistical Foundations}
+
+\newpage
+\section{Kinetic Theory}
+
+\end{document}

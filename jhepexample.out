@@ -1,21 +1,40 @@
 \BOOKMARK [1][-]{section.1}{Introduction}{}% 1
 \BOOKMARK [2][-]{subsection.1.1}{Course Outline}{section.1}% 2
-\BOOKMARK [1][-]{section.2}{Basic Statistical Mechanics}{}% 3
-\BOOKMARK [2][-]{subsection.2.1}{Ensembles}{section.2}% 4
-\BOOKMARK [2][-]{subsection.2.2}{Perfect Gasses}{section.2}% 5
-\BOOKMARK [1][-]{section.3}{Imperfect Gasses}{}% 6
-\BOOKMARK [1][-]{section.4}{Distribution Functions}{}% 7
-\BOOKMARK [2][-]{subsection.4.1}{Potential of Mean Force}{section.4}% 8
-\BOOKMARK [2][-]{subsection.4.2}{The Superposition Approximation}{section.4}% 9
-\BOOKMARK [1][-]{section.5}{Integral Equations for g\(r\)}{}% 10
-\BOOKMARK [2][-]{subsection.5.1}{The Kirkwood Equation}{section.5}% 11
-\BOOKMARK [3][-]{subsubsection.5.1.1}{Numerical Solution}{subsection.5.1}% 12
-\BOOKMARK [2][-]{subsection.5.2}{The Born-Green-Yvon Equation}{section.5}% 13
-\BOOKMARK [1][-]{section.6}{Perturbation Theory}{}% 14
-\BOOKMARK [2][-]{subsection.6.1}{General Theory and the Van Der Waals Equation}{section.6}% 15
-\BOOKMARK [2][-]{subsection.6.2}{Barker-Henderson Theory}{section.6}% 16
-\BOOKMARK [2][-]{subsection.6.3}{Chandler-Weeks-Anderson Theory}{section.6}% 17
-\BOOKMARK [1][-]{section.7}{Continuum Mechanics}{}% 18
-\BOOKMARK [2][-]{subsection.7.1}{Phenomenological Theory}{section.7}% 19
-\BOOKMARK [2][-]{subsection.7.2}{Statistical Foundations}{section.7}% 20
-\BOOKMARK [1][-]{section.8}{Kinetic Theory}{}% 21
+\BOOKMARK [0][-]{part.1}{I Basics}{}% 3
+\BOOKMARK [1][-]{section.2}{Basic Statistical Mechanics}{part.1}% 4
+\BOOKMARK [2][-]{subsection.2.1}{Ensembles}{section.2}% 5
+\BOOKMARK [3][-]{subsubsection.2.1.1}{The Micricanonical Ensemble}{subsection.2.1}% 6
+\BOOKMARK [2][-]{subsection.2.2}{Perfect Gasses}{section.2}% 7
+\BOOKMARK [0][-]{part.2}{II Core Concepts in Liquids State Theory}{}% 8
+\BOOKMARK [1][-]{section.3}{Imperfect Gasses}{part.2}% 9
+\BOOKMARK [1][-]{section.4}{Distribution Functions}{part.2}% 10
+\BOOKMARK [2][-]{subsection.4.1}{From the Probability density to Correlation Functions}{section.4}% 11
+\BOOKMARK [3][-]{subsubsection.4.1.1}{The Pair-Distribution Function from Scattering Experiments}{subsection.4.1}% 12
+\BOOKMARK [2][-]{subsection.4.2}{The Potential of Mean Force}{section.4}% 13
+\BOOKMARK [3][-]{subsubsection.4.2.1}{The Super-Position Approximation}{subsection.4.2}% 14
+\BOOKMARK [2][-]{subsection.4.3}{The Ornstein-Zernike Equation}{section.4}% 15
+\BOOKMARK [2][-]{subsection.4.4}{Density Expansions of Distribution Functions}{section.4}% 16
+\BOOKMARK [1][-]{section.5}{Integral Equations for g\(r\)}{part.2}% 17
+\BOOKMARK [2][-]{subsection.5.1}{The Kirkwood Equation}{section.5}% 18
+\BOOKMARK [2][-]{subsection.5.2}{The Born-Green-Yvon Equation}{section.5}% 19
+\BOOKMARK [2][-]{subsection.5.3}{The Percus-Yevick Equation}{section.5}% 20
+\BOOKMARK [2][-]{subsection.5.4}{Density Expansion of the Percus-Yevick Equation}{section.5}% 21
+\BOOKMARK [2][-]{subsection.5.5}{The Hypernetted-Chain Equation}{section.5}% 22
+\BOOKMARK [1][-]{section.6}{Numerical Solutions}{part.2}% 23
+\BOOKMARK [2][-]{subsection.6.1}{The Percus-Yevick Equation}{section.6}% 24
+\BOOKMARK [3][-]{subsubsection.6.1.1}{Coordinate Transformation}{subsection.6.1}% 25
+\BOOKMARK [3][-]{subsubsection.6.1.2}{Iterative Scheme}{subsection.6.1}% 26
+\BOOKMARK [2][-]{subsection.6.2}{BGY}{section.6}% 27
+\BOOKMARK [3][-]{subsubsection.6.2.1}{Coordinate Transformation}{subsection.6.2}% 28
+\BOOKMARK [3][-]{subsubsection.6.2.2}{Iterative Scheme}{subsection.6.2}% 29
+\BOOKMARK [1][-]{section.7}{Perturbation Theory}{part.2}% 30
+\BOOKMARK [2][-]{subsection.7.1}{General Theory and the Van Der Waals Equation}{section.7}% 31
+\BOOKMARK [2][-]{subsection.7.2}{Barker-Henderson Theory}{section.7}% 32
+\BOOKMARK [2][-]{subsection.7.3}{Chandler-Weeks-Anderson Theory}{section.7}% 33
+\BOOKMARK [0][-]{part.3}{III Transport Processes}{}% 34
+\BOOKMARK [1][-]{section.8}{Continuum Mechanics}{part.3}% 35
+\BOOKMARK [2][-]{subsection.8.1}{Phenomenological Theory}{section.8}% 36
+\BOOKMARK [2][-]{subsection.8.2}{Statistical Foundations}{section.8}% 37
+\BOOKMARK [1][-]{section.9}{Kinetic Theory}{part.3}% 38
+\BOOKMARK [0][-]{part.4}{IV Appendix}{}% 39
+\BOOKMARK [1][-]{appendix.A}{Python Implementation}{part.4}% 40

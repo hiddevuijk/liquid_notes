@@ -7,6 +7,7 @@
 
 \usepackage[T1]{fontenc} % if needed
 
+\usepackage{makeidx}
 
 \newcommand{\pp}{\boldsymbol{p}}
 \newcommand{\rr}{\boldsymbol{r}}
@@ -38,8 +39,7 @@
 
 
 
-
-\abstract{Abstract...}
+\abstract{}
 
 
 
@@ -48,8 +48,10 @@
 \flushbottom
 
 \newpage
-\section{Introduction}\
+\section{Introduction}
 \subsection{Course Outline}
+\newpage
+\part{Basics}
 
 \newpage
 \section{Basic Statistical Mechanics}\label{sec:basic}
@@ -57,32 +59,58 @@
 some intro
 
 \subsection{Ensembles}\label{sec:enembles}
+\subsubsection{The Micricanonical Ensemble}
 \subsection{Perfect Gasses}\label{sec:perfect}
 \newpage
+
+
+\part{Core Concepts in Liquids State Theory}
 \section{Imperfect Gasses}\label{sec:imperfect}
 
 \newpage
 \section{Distribution Functions}\label{sec:distribution}
+\subsection{From the Probability density to Correlation Functions}
 \input{sections/distribution}
+\subsubsection{The Pair-Distribution Function from Scattering Experiments}
+\subsection{The Potential of Mean Force}
+\subsubsection{The Super-Position Approximation}
+\subsection{The Ornstein-Zernike Equation}
+\subsection{Density Expansions of Distribution Functions}
 
 \newpage
 \section{Integral Equations for $g(r)$}\label{sec:integral}
+\input{sections/integral}
 \subsection{The Kirkwood Equation}\label{ssec:kirkwood}
 \input{sections/kirkwood}
 \subsection{The Born-Green-Yvon Equation}\label{ssec:born}
+\subsection{The Percus-Yevick Equation}
+\subsection{Density Expansion of the Percus-Yevick Equation}
+\subsection{The Hypernetted-Chain Equation}
 
-\newpage
+\section{Numerical Solutions}
+\subsection{The Percus-Yevick Equation}
+\subsubsection{Coordinate Transformation}
+\subsubsection{Iterative Scheme}
+
+\subsection{BGY}
+\subsubsection{Coordinate Transformation}
+\subsubsection{Iterative Scheme}
+
 \section{Perturbation Theory}
 \subsection{General Theory and the Van Der Waals Equation}
 \subsection{Barker-Henderson Theory}
 \subsection{Chandler-Weeks-Anderson Theory}
 
-\newpage
+\part{Transport Processes}
 \section{Continuum Mechanics}
 \subsection{Phenomenological Theory}
 \subsection{Statistical Foundations}
 
-\newpage
 \section{Kinetic Theory}
+
+\part{Appendix}
+\appendix
+\section{Python Implementation}
+
 
 \end{document}

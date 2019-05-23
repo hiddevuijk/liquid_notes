@@ -7,14 +7,15 @@
 
 \usepackage[T1]{fontenc} % if needed
 
-\usepackage{makeidx}
 
 \newcommand{\pp}{\boldsymbol{p}}
+\newcommand{\kk}{\boldsymbol{k}}
 \newcommand{\rr}{\boldsymbol{r}}
 \newcommand{\rhon}{\ensuremath{\rho^{(n)}(\rr_1, \dots , \rr_n)}}
 \newcommand{\rhos}{\ensuremath{\rho^{(1)}(\rr_1)}}
 \newcommand{\rhoss}{\ensuremath{\rho^{(2)}(\rr_1,\rr_2)}}
 
+\subheader{Lecture Notes}
 \title{Statistical Mechanics of Liquids}
 
 
@@ -40,16 +41,18 @@
 
 
 \abstract{}
-
-
+\dedicated{}
 
 \begin{document} 
+
 \maketitle
 \flushbottom
 
 \newpage
 \section{Introduction}
 \subsection{Course Outline}
+\subsection{Literature}
+
 \newpage
 \part{Basics}
 
@@ -58,7 +61,9 @@
 some intro
 
 \subsection{Ensembles}\label{sec:enembles}
-\subsubsection{The Micricanonical Ensemble}
+\subsubsection{The Microcanonical Ensemble}
+\subsubsection{The Canonical Ensemble}
+\subsubsection{The Grand Canonical Ensemble}
 \subsection{Perfect Gasses}\label{sec:perfect}
 \newpage
 
@@ -71,9 +76,10 @@ some intro
 \input{sections/distribution}
 \subsubsection{The Pair-Distribution Function from Scattering Experiments}
 \subsection{The Potential of Mean Force}
-\subsubsection{The Super-Position Approximation}
+\subsubsection{The Superposition Approximation}
 \subsection{The Ornstein-Zernike Equation}
-\subsection{Density Expansions of Distribution Functions}
+\subsection{Density Expansions}
+\input{sections/density_expansions}
 
 \section{Integral Equations for $g(r)$}\label{sec:integral}
 \input{sections/integral}
@@ -83,15 +89,17 @@ some intro
 \subsection{The Percus-Yevick Equation}
 \subsection{Density Expansion of the Percus-Yevick Equation}
 \subsection{The Hypernetted-Chain Equation}
+\subsection{The Carnahan-Starling Equation of State}
 
 \section{Numerical Solutions}
-\subsection{The Percus-Yevick Equation}
-\subsubsection{Coordinate Transformation}
-\subsubsection{Iterative Scheme}
-
+\subsection{Numerical Solutions to Integral Equations}
+\input{sections/numerical_solutions_to_integral_equations}
+\subsection{PY + OZ in Fourier Space}
+\input{sections/py_oz_in_fourier_space}
+\subsection{PY + OZ in Real Space}
+\input{sections/py_oz_in_real_space}
 \subsection{BGY}
-\subsubsection{Coordinate Transformation}
-\subsubsection{Iterative Scheme}
+\input{sections/bgy_numerical}
 
 \section{Perturbation Theory}
 \subsection{General Theory and the Van Der Waals Equation}
@@ -107,7 +115,8 @@ some intro
 
 \part{Appendix}
 \appendix
+\section{Fourier Transformation of Spherically symmetric Functions in $\mathbb{R}^3$}\label{sec:ft_3d}
+\input{sections/fourier_transformation_of_a_spherically_symmetric_function_in}
 \section{Python Implementation}
-
 
 \end{document}

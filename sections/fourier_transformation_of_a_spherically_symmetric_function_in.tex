@@ -1,0 +1,42 @@
+
+The following definitions of the Fourier transformation in
+$\mathbb{R}^3$ are used:
+\begin{align}
+F(\kk) = \int d \rr e^{-i \kk \cdot \rr} f(\rr),
+\end{align}
+and
+\begin{align}
+f(\rr) = \int \frac{d\kk}{\left(2 \pi \right)^3} \ e^{-i \rr \cdot \kk} F(\kk).
+\end{align}
+When the function $f(\rr)$ only depends on the absolute value
+of $\rr$, the forward transformation becomes
+\begin{align}
+F(\kk) &= \int d \rr e^{-i \kk \cdot \rr} f(|\rr|) \\
+&= \int d \rr e^{i k r \cos(\theta)} f(|\rr|),
+\end{align}
+where the real-space coordinate system is choosen such that
+the vector $\kk$ point along the $\hat{e}_z$ axis,
+which is possible because of the rotational symmetry of the 
+function $f(\rr)$.
+The angle $\theta$ is the angle with the $\hat{e}_z$ axis.
+This equation also makes it clear that if $f(\rr)$ only depends on the absolute value of $\rr$,
+than the Fourier transformation $F(\kk)$ only depends on the absolute value of $\kk$.
+Next, one can transform to a spherical coordiante system:
+\begin{align}
+F(k) &= \int_0^{2 \pi} d\phi \int_0^\pi d \theta \int_0^\infty d r
+    r^2  e^{-i r k \cos \left( \theta \right)} f(r) \\
+&= - 2 \pi \int_{\cos(0)}^{\cos(\pi)} d\left[ \cos(\theta) \right] \int_0^\infty dr r^2 
+    e^{i r k \cos \left( \theta \right)} f(r) \\
+&= - 2 \pi \int_{1}^{-1} \int_0^\infty dr r^2
+    e^{-i krx} f(r) \\
+&= 2 \pi \int_0^\infty dr r^2 f(r) \frac{1}{-ikr}
+    \left[ e^{-ikr}-e^{ikr} \right] \\
+&= 4 \pi \int_0^\infty dr r^2 f(r) \frac{\sin(kr)}{kr}.
+\end{align}
+In the same way the inverse transformation can be simpified:
+\begin{align}
+f(r) &= \int \frac{d\kk}{\left(2 \pi\right)^3} 
+F(|\kk|) e^{i \kk \cdot \rr} \\
+&= \frac{1}{2 \pi^2} \int_0^\infty dk k^2 F(k)
+\frac{\sin(kr)}{kr}.
+\end{align}

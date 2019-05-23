@@ -1,0 +1,177 @@
+
+In this section I will explain how to solve the PY + OZ 
+in Fourier space.
+This is faster than the real space method.
+
+I will first show the naive implimentation, and point out some of the problems with it, then solve the problems and
+show the final algorithm at the end of this section.
+The naive algorithm is:
+\begin{enumerate}
+\item Guess an acceptable initial $h(r)$ denoted by $h_0(r)$.
+ For example, use the low-density solution $h_0(r) = \lim_{\rho \to 0} h(r)$ or use an  $h(r)$ calculated for slightly different parameters.
+\item Get the direct-correlation function $c_n(r)$ corresponding to $h_n(r)$ from the Percus-Yevick equation:
+\begin{align}
+c_n(r) = f(r)e^{\beta u(r)} \left( h_n(r) - 1\right).
+\end{align}
+For the first loop through the algorithm use $n=0$.
+\item Fourier Transform $c_n(r)$ to get $C_n(k)$.
+\item Use the Ornstein-Zernike equation to the next Fourier transformed total-correlation function:
+\begin{align}
+H_{n+1}(k) = \frac{C(k)}{1-\rho C(k)}.
+\end{align}
+\item Fourier transform back to real space to get $h'_{n+1}(r)$.
+\item Mix the new solution with the old one:
+\begin{align}
+h_{n+1}(r) = \alpha h_n(r) + (1-\alpha) h'_{n+1}(r),
+\end{align}
+with $0\leq \alpha < 1$.
+\item Check for convergence. If converged, you are done, else go to 2.
+\end{enumerate}
+
+This algorithm will lead to multiplication and divisions by zeros and infinities.
+To avoid these, some alterations need to be made.
+
+\subsubsection{The Indirect Correlation Function}
+The Percus-Yevick Equation is 
+\begin{align}
+c(r) &= f(r)y(r)\\
+&= \left[ e^{-\beta u(r)} - 1\right]
+    e^{\beta u(r)} \left[ h(r) + 1\right] \\
+&= h(r) - \left[ e^{\beta u(r)} h(r) +
+    e^{\beta u(r)} - 1 \right],
+\label{eq:py_problem}
+\end{align}
+where I used $f(r) = e^{-\beta u(r)}$, $y(r) = e^{\beta u(r)} g(r)$ and $h(r) = g(r) - 1$ to go from the first to the second line.
+Both $c(r)$ and $h(r)$ are finite; therefor, the term in the 
+square brackets is also finite.
+The exponentials in the square brackets diverge for potentials that are strongly repulsive at short distances, which is the case for the Lennard-Jones or Hard sphere potential.
+So there is some cancellation of infinities.
+This is not a problem for theoretical manipulation,
+but it makes numerical calculations impossible.
+Because the expression in the square brackets is finite, the problem is only in the representation of those terms.
+The problem can be solved by defining the indirect correlation function, $d(r)$
+\footnote{This is not a commonly used function and the symbol for this function is not used in other texts.}
+, and work with the direct and indirect-correlation functions instead of the direct and the total-corelation functions. 
+
+The total-correlation function is the sum of the direct and the indirect-correlation function:
+\begin{align}
+h(r) = c(r) + d(r).
+\end{align}
+The Percus-Yevick approximation, is an approximate relation between the direct and total-correlation function, but it can be rewriten, such that it is an approximate relation between the direct and indirect-correlation function:
+\begin{align}
+c(r) = c(r) + d(r) - 
+    \left[
+    e^{\beta u(r)} \left( c(r) + d(r) \right) 
+    + e^{\beta u(r)} - 1
+    \right].
+\end{align}
+Reorder this to get:
+\begin{align}
+e^{\beta u(r)} c(r) &= d(r) - e^{\beta u(r)} +
+        \left( 1- e^{\beta u(r)} \right) \\
+&= d(r) \left( 1-e^{\beta u(r)} \right)
+        + \left( 1-e^{\beta u(r)} \right) \\
+&= \left( d(r) + 1 \right) \left( e^{-\beta u(r)} - 1 \right).
+\end{align}
+Multiplying both sides by $e^{-\beta u(r)}$ results in the 
+Percus-Yevick approximation rewriten as a relation between
+the direct and indirect-correlation functions:
+\begin{align}
+c(r)= f(r)\left( d(r) + 1 \right).
+\label{eq:py_c_d}
+\end{align}
+The Mayer fucntion is finite everywhere, so this last equation can be used in numerical calculations.
+
+
+The Ornstein-Zernike equation defines the relation between the direct and total-correlation function, but is can be rewriten to relate the direct to the indirect correlation function.
+The Fourier transform of the indirect-correlation function is
+\begin{align}
+D(\kk) &= H(\kk) - C(\kk)\\
+&= \frac{C(\kk)}{1 - \rho C(\kk)} - C(\kk),
+\label{eq:oz_d_c}
+\end{align}
+where to I used the Ornstein-Zernike equation $\left( H(\kk) = \frac{C(\kk)}{1 - \rho C(\kk)}\right)$ to go to the second line.
+
+
+Equations \eqref{eq:py_c_d} and \eqref{eq:oz_d_c} can be used to find a numerical solution for the direct and indirect correlation functions, and the sum of the two gives the total correlation function.
+
+\subsubsection{One More Change to the Naive Algorithm}
+The Fourier transformation of a isotropic function in $\mathbb{R}^3$ is (see App.\ref{sec:ft_3d}):
+
+\begin{align}
+|\kk|F(|\kk|) = 4 \pi \int_0^\infty dr |\rr| f(|\rr|) \sin(|\kk||\rr|),
+\end{align}
+and the inverse transformation is:
+\begin{align}
+|\rr|f(|\rr|) = \frac{1}{2 \pi^2} \int_0^\infty dk |\kk| F(|\kk|) \sin(|\kk||\rr|).
+\end{align}
+These definitions show that it is convenient to work with $|\rr|f(|\rr|)$ and $|\kk|F(|\kk|)$ in stead of $f(|\rr|)$ and $F(|\kk|)$, when does these transformation repeatedly.
+It is therfore expedient to define the following four new functions:
+\begin{align}
+\tilde{c}(r) &= r c(r), \\
+\tilde{d}(r) &= r d(r), \\
+\tilde{C}(k) &= k C(k), \\
+\tilde{D}(k) &= k D(k),
+\end{align}
+and use these in the algorithm.
+The relations between $\tilde{c}(r)$ and $\tilde{C}(k)$, and
+$\tilde{d}(r)$ and $\tilde{D}(k)$ are
+\begin{align}\label{eq:c_tilde_ft_pair}
+\tilde{C}(k) = 4 \pi \int_0^\infty dk 
+    \tilde{C}(k) sin(k r), ~
+\tilde{c}(r) = \frac{1}{2 \pi^2} \int_0^\infty dk 
+    \tilde{c}(r) sin(k r),
+\end{align}
+and
+\begin{align}\label{eq:d_tilde_ft_pair}
+\tilde{D}(k) = 4 \pi \int_0^\infty dk 
+    \tilde{D}(k) sin(k r), ~
+\tilde{c}(r) = \frac{1}{2 \pi^2} \int_0^\infty dk 
+    \tilde{c}(r) sin(k r).
+\end{align}
+The Ornstein-Zernike equation for the functions $\tilde{C}(k)$ and $\tilde{D}(k)$ is
+\begin{align}\label{eq:oz_D_tilde_C_tilde}
+\tilde{D}(k) = \frac{\tilde{C}(k)}{1-\rho \tilde{C}(k)/k}
+    - \tilde{C}(k).
+\end{align}
+The division by $k$ in the denominator on the right-hand side
+is not a problem because $\tilde{D}(0) = 0$ ($D(k)$ is finite, therfore $kD(k)|_{k=0}=0$), so $k=0$ need not be evaluated.
+
+\subsubsection{The Final Algorithm}
+The final version of the algorithm is similar in spirit to the naive one, but uses the transformed functions and the indirect-correlation function in stead of the total-correlation function.
+\begin{enumerate}
+\item  Guess $\tilde{d}_0(r)$. For example, the low density solution, or the outcome of a previous calculation for different parameters.
+\item Get $\tilde{c}_n(r)$ from the modified Percus-Yevick approximation (Eq. \eqref{eq:py_c_d}).
+In the first loop through the algorithm $n=0$.
+\item Use Eq. \eqref{eq:c_tilde_ft_pair} to get $\tilde{C}_n(k)$.
+\item Use Eq. \eqref{eq:oz_D_tilde_C_tilde} to get $\tilde{D}'_{n+1}(k)$:
+\begin{align}
+\tilde{D}'_{n+1}(k) = \frac{\tilde{C}_n(k)}{1-\rho \tilde{C}_n(k)/k} - \tilde{C}_n(k).
+\end{align}
+\item Use \eqref{eq:d_tilde_ft_pair} to get $\tilde{d}'_{n+1}(r)$.
+\item Mix the new indirect-correlation function with the old one:
+\begin{align}
+\tilde{d}_{n+1}(r) = \alpha \tilde{d}_n(r) + 
+    (1-\alpha) \tilde{d}'_{n+1},
+\end{align}
+with $0 \leq \alpha < 1$.
+\item Check for convergence. If converged, go to 8, else go to 2.
+\item  Calculate the total-correlation function from the direct and indirect-correlation functions:
+\begin{align}
+h(r) = 
+\begin{cases}
+    -1 ,&\text{if}~~ r = 0\\
+    \tilde{c}_n(r)/r + \tilde{d}_n(r)/r ,& \text{if}~~ r>0.
+\end{cases}
+\end{align}
+\end{enumerate}
+As a convergence critecion one can use, for example,
+\begin{align}
+\int dr \left[ \tilde{d}_n(r) - \tilde{d}'_{n+1}(r) \right]
+< \epsilon.
+\end{align}
+The parameters for the numerical solution are: 1) N, the number of data point for the functions;
+2) R, the domain of the functions dependent on space;
+(This also defines the domain of the Fourier transformed functions.)
+3) $\alpha$, the mixing parameter;
+4) $\epsilon$, the convergence parameter.

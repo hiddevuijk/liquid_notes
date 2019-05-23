@@ -1,0 +1,141 @@
+\subsubsection{Distribution Functions}
+The density expansions of distribution functions can be done in a similar way as the virial expansion.
+We work in the grand canonical ensemble, and start with the 
+definition of the two-body distribution function:
+\begin{align}
+\rho^{(2)} (\rr_1,\rr_2) &= \frac{1}{\Xi} \sum_{N=2}^\infty
+    \frac{z^N}{(N-2)!} \int d\rr_3 \cdots \int d\rr_N
+    e^{-\beta U_N(\rr^N)}\\
+&= \frac{1}{\Xi} \left[ z^2 e^{-\beta u(r_{1,2})} +
+  \sum_{N=2}^\infty \frac{z^N}{(N-2)!} \int d\rr_3 \cdots \int d\rr_N
+    e^{-\beta U_N(\rr^N)} \right],\\
+&=  \frac{z^2 e^{-\beta u(r_{1,2})}}{\Xi} \left[ 1 +
+  \sum_{N=2}^\infty \frac{z^{N-2}}{(N-2)!} \int d\rr_3 \cdots \int d\rr_N
+    e^{-\beta U'_N(\rr^N)} \right],
+\label{eq:rho2_exp1}
+\end{align}
+where I assumed a pairwise additive interaction potential, and defined $U'_N(\rr_3,..,\rr_N) = -u(\rr_{1,2}) + \sum_{i<j}^N
+u(\rr_{i,j})$.
+Note that the activity ($z$), can be expanded in the density (see ...): $z = \rho -2b_2 \rho^2 +(8b_2^2 - 3b_3) \rho^3 + ...$.
+For a density expansion up to $\mathcal{O}(\rho^n)$,
+one needs to consider terms up to $\mathcal{O}(z^n)$.
+So, the term in the square bracktets already has a form of a density expansion.
+One only has to expand the activity and the partition function $\Xi$ in the density.
+From the discussion on the virial expansion  we know that
+\begin{align}
+\Xi = 1 + \sum_{N=1}^{\infty} \frac{z^N}{N!} Z_N,
+\end{align}
+where $Z_N$ is the configurational integral.
+This also gives the expansion of the inverse of the partition function:
+\begin{align}
+\frac{1}{\Xi} &= 1 - \sum_{N=1}^{\infty} \frac{z^N}{N!} Z_N +
+    \left( \sum_{N=1}^{\infty} \frac{z^N}{N!} Z_N \right)^2 + \cdots \\
+&= 1 - \left( z Z_1 + \frac{1}{2} z^2 Z_2 + \cdots \right) +
+    \left(z Z_1 + \frac{1}{2} z^2 Z_2 + \cdots \right)^2 + \cdots \\
+&= 1 - zZ_1  - \frac{1}{2} z^2 Z_2 + z^2 Z_1^2 + \mathcal{O}(z^3) \\
+&= 1 - z Z_1 - \frac{1}{2} z^2 \left( Z_2 - 2 Z_1^2 \right) +
+    \mathcal{O}(z^3).
+\label{eq:xi_exp}
+\end{align}
+
+Using this expression for the inverse of the partition function in Eq. \eqref{eq:rho2_exp1} gives
+\begin{align}
+\rho^{(2)}(\rr_1,\rr_2) &= z^2 e^{-\beta u(\rr_{1,2})}
+    \underbrace{
+    \left[ 1 - z Z_1 \right]
+    }_{1/\Xi}
+    \underbrace{
+    \left[ 1 + z \int d\rr_3 e^{-\beta U'_3(\rr_1,\rr_2,\rr_3)} \right]}_\text{square bracktet in Eq. \eqref{eq:rho2_exp1}}
+    + \mathcal{O}(z^4) \\
+&= z^2 e^{-\beta u(\rr_{1,2})} \left\{1 - z \left[ Z_1 - \int d\rr_3 e^{-\beta U'_3(\rr_1,\rr_2,\rr_3)} \right] \right\} + \mathcal{O}(z^4).
+\label{eq:rho2_exp2}
+\end{align}
+The expansion of $z$ is
+$z = \rho - 2b_2\rho^2 + \mathcal{O}(\rho^3)$
+with $b_2 = \frac{1}{2 V} (Z_2-Z_1^2)$ (see REF).
+The expansion of $z^2$ is therefor
+$z^2 = \rho^2 - 4 b_2 \rho^3 + \mathcal{O}(\rho^4)$.
+Replacing $z$ and $z^2$ in Eq. \eqref{eq:rho2_exp2} gives
+\begin{align}
+\rho^{(2)}(\rr_1,\rr_2) &=
+    \underbrace{ \left[ \rho^2 - 4b_2 \rho^3 \right] }_{z^2}
+     e^{-\beta u(\rr_{1,2})} \left\{1 - 
+    \underbrace{\rho}_{z} \left[ Z_1 - \int d\rr_3 e^{-\beta U'_3(\rr_1,\rr_2,\rr_3)} \right] \right\} + \mathcal{O}(z^4)\\
+&= e^{-\beta u(\rr_{1,2})} \left[\rho^2 - 
+    \rho^3 \left(4b_2 + Z_1 - \int d\rr_3 e^{-\beta U'_3(\rr_1,\rr_2,\rr_3)} \right) \right] + \mathcal{O}(z^4).
+\label{eq:rho2_exp3}
+\end{align}
+Next we need to find an expression for the coefficient of the $\rho^3$ term.
+They were already evaluated when we discussed the virial expansion, but I will show it here again.
+For $4 b_2 = \frac{2}{V} \left( Z_2 - Z_1^2 \right)$ (See REF)
+we need to know $Z_1$ and $Z_2$.
+First $Z_2$, this is, by definition,
+\begin{align}
+\frac{2}{V} Z_2 &= \frac{2}{V} \int d\rr'_1 \int d\rr'_2
+    e^{-\beta u(|\rr'_1 - \rr'_2|)} \\
+&= 2 \int d\rr_3 e^{-\beta u(|\rr'_1 - \rr_3|)}\\
+&= 2 \int d\rr_3 e^{-\beta u(|\rr'_2 - \rr_3|)}.
+\end{align}
+To go from the first to the second line, I changed coordinates from $d\rr'_2$ to  $d\rr_3$ with
+$d\rr_3 = d\rr'_1 - d\rr'_2$, than the integrand is 
+independent of $\rr'_1$.
+So the $\rr'_1$ integral gives a factor of $V$.
+Then shifting the origin of $\rr_3$ to $\rr'_1$ gives the 
+second line, and shifting the origin to $\rr'_2$ gives the 
+third line.
+Shifting the origin is allowed because the system is homogeneous.
+Adding half of the second line to half of the third line gives
+\begin{align}
+\frac{2}{V}Z_2 = \int d\rr_3 
+e^{-\beta u(|\rr_1 - \rr_3|)} + 
+e^{-\beta u(|\rr_2 - \rr_3|)}.
+\end{align}
+The configuration integral for one particle is equal to the volume which can be writen as $\int d\rr_3$, so
+\begin{align}
+\frac{2}{V} Z_1^2 &= 2 V \\
+&= 2 \int d\rr_3.
+\end{align}
+With the expression for $\frac{2}{V}Z_2$ and $\frac{2}{V}Z_1^2$ we have
+\begin{align}
+\frac{2}{V} b_2 &= \int d\rr_3 
+    e^{-\beta u(|\rr_1 - \rr_3|)} + 
+    e^{-\beta u(|\rr_2 - \rr_3|)} - 2\\
+&= \int d\rr_3 \left\{ f_{13} + f_{23} \right\},
+\end{align}
+where in the last line I used the definition of the Mayer functions $f_{13} = e^{-\beta u(|\rr_1 - \rr_3|)} - 1$,
+and similarly for $f_{23}$.
+
+We can do the same kind of manipulations to the other part
+of the coefficient of $\rho^3$ in Eq. \eqref{eq:rho2_exp3}:
+\begin{align}
+Z_1 -  \int d\rr_3 e^{-\beta U'_3(\rr_1,\rr_2,\rr_3)} &=
+    - \int d\rr_3 e^{-\beta u(|\rr_1 - \rr_3|)} 
+    e^{-\beta u(|\rr_1 - \rr_3|)} -1 \\
+&= - \int d\rr_3 \left(f_{13}+ 1\right)\left(f_{23}+ 1\right) -1\\
+&= - \int d\rr_3 f_{13}+ f_{23} + f_{13}f_{23},
+\end{align}
+where I used the definition of $U'_3$ and used $Z_1=V=\int d\rr_3$.
+
+The coefficient of the $\rho^3$ term in Eq. \eqref{eq:rho2_exp3} can now be expressed in terms of Mayer functions, and the density expansion can be writen as
+\begin{align}
+\rho^{(2)}(\rr_1,\rr_2) = e^{-\beta u(r_{12})}
+    \left[ \rho^2 + \rho^3 \int d\rr_3 f_{13}f_{23} \right]
+    + \mathcal{O}(\rho^4).
+\end{align}
+One could, with considerably more effort, calculated the density expansion one order higher.
+This would result in
+\begin{align}
+\rho^{(2)}(\rr_1,\rr_2) = e^{-\beta u(r_{12})}
+    \Bigg[& \rho^2 + \rho^3 \int d\rr_3 f_{13}f_{23} 
+        +\frac{1}{2} \rho^4 \int d\rr_3 \int d\rr_4
+        \big( 2 f_{13}f_{34}f_{24} + \nonumber \\
+            &4f_{13}f_{34}f_{23}f_{24} +
+            f_{13}f_{23}f_{14}f_{24} +
+            f_{13}f_{23}f_{14}f_{24}f_{34}
+        \big)
+    \Bigg]
+    + \mathcal{O}(\rho^5).
+\end{align}
+
+\subsubsection{Correlation Functions}
+\subsubsection{The Percus-Yevick Equation}

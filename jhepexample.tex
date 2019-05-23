@@ -25,18 +25,15 @@
 %% \affiliation{Institution,\\Address, Country}
 
 % more complex case: 4 authors, 3 institutions, 2 footnotes
-\author[a]{Hidde Vuijk}
-\author[a,b]{Abhinav Sharma}
+%\author[]{}
 
 % The "\note" macro will give a warning: "Ignoring empty anchor..."
 % you can safely ignore it.
 
-\affiliation[a]{Leibniz-Institut f\"ur Polymerforschung, Dresden, Germany}
-\affiliation[b]{TU Dresden}
+%\affiliation[]{}
 
 % e-mail addresses: one for each author, in the same order as the authors
-\emailAdd{vuijk@ipfdd.de}
-\emailAdd{sharma@ipfdd.de}
+%\emailAdd{}
 
 
 
@@ -54,21 +51,7 @@
 \subsection{Literature}
 
 \newpage
-\part{Basics}
 
-\section{Basic Statistical Mechanics}\label{sec:basic}
-
-some intro
-
-\subsection{Ensembles}\label{sec:enembles}
-\subsubsection{The Microcanonical Ensemble}
-\subsubsection{The Canonical Ensemble}
-\subsubsection{The Grand Canonical Ensemble}
-\subsection{Perfect Gasses}\label{sec:perfect}
-\newpage
-
-
-\part{Core Concepts in Liquids State Theory}
 \section{Imperfect Gasses}\label{sec:imperfect}
 
 \section{Distribution Functions}\label{sec:distribution}
@@ -88,8 +71,9 @@ some intro
 \subsection{The Born-Green-Yvon Equation}\label{ssec:born}
 \subsection{The Percus-Yevick Equation}
 \subsection{Density Expansion of the Percus-Yevick Equation}
-\subsection{The Hypernetted-Chain Equation}
-\subsection{The Carnahan-Starling Equation of State}
+\subsection{Equations of State for Hard Spheres}
+\subsubsection{Percus-Yevick}
+\subsubsection{The Carnahan-Starling}
 
 \section{Numerical Solutions}
 \subsection{Numerical Solutions to Integral Equations}
@@ -106,17 +90,27 @@ some intro
 \subsection{Barker-Henderson Theory}
 \subsection{Chandler-Weeks-Anderson Theory}
 
-\part{Transport Processes}
-\section{Continuum Mechanics}
-\subsection{Phenomenological Theory}
-\subsection{Statistical Foundations}
-
-\section{Kinetic Theory}
-
-\part{Appendix}
 \appendix
+
+\section{Basic Statistical Mechanics}\label{sec:basic}
+
+some intro
+
+\subsection{Ensembles}\label{sec:enembles}
+\subsubsection{The Microcanonical Ensemble}
+\subsubsection{The Canonical Ensemble}
+\subsubsection{The Grand Canonical Ensemble}
+\subsection{Perfect Gasses}\label{sec:perfect}
+
+
+\section{The Kirkwood Equation}\label{sec:app_kirkwood}
+\input{sections/app_kirkwood.tex}
 \section{Fourier Transformation of Spherically symmetric Functions in $\mathbb{R}^3$}\label{sec:ft_3d}
 \input{sections/fourier_transformation_of_a_spherically_symmetric_function_in}
-\section{Python Implementation}
+\cite{hansen1990theory}
+\cite{mcquarrie2000statistical}
+\cite{press1992numerical}
+\bibliographystyle{apsrev4-1}
+\bibliography{books}
 
 \end{document}

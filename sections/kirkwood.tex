@@ -3,7 +3,7 @@ The goal of this section is to derive an integral equation for the pair-distribu
 For this, one can use a system with two kinds of particles,
 just as the system that was used to express the chemical potential using the pair-distribution function. ADD EQ. REF
 In this system the interaction potential of particle 1 with any of the other particles is scaled by $\xi$:
-\begin{align}
+\begin{align}\label{eq:kirkwood:UN_xi}
 U_N(\rr_1,..,\rr_N) = \sum_{j=2}^{N} \xi u(\rr_1,\rr_j)
 + \sum_{\substack{i=2 \\ j>i}}^N u(\rr_i,\rr_j),
 \end{align}
@@ -30,6 +30,83 @@ kT~ln\left(\rho^{(n)}(\rr_1,..,\rr_n;\xi)\right) =
 kT~ln\left(\rho^{(n)}(\rr_1,..,\rr_n;\xi')\right).
 \end{align}
 All that is to be done is to work out what the derivative on the right hand side is.
+For simplicity, I will do the $n=2$ case here, and show the general case in App. \ref{sec:app_kirkwood}.
+We need the derivative with respect of $\xi$ of
+\begin{align}
+\rho^{(2)}(\rr_1,\rr_2;\xi) =
+\frac{N(N-1)}{Z_N(\xi)} \int d\rr_3 \cdots \int d\rr_N~
+e^{-\beta U_N(\xi)}.
+\end{align}
+This is
+\begin{align}\label{eq:kirkwood:first_deriv}
+k T \frac{\rho^{(2)}(\partial \rr_1,\rr_2;\xi)}{\partial \xi} &=
+\frac{N(N-1)}{Z_N(\xi)} \int d\rr_3 \cdots \int d\rr_N~
+    e^{-\beta U_N(\xi)}. \\
+&= 
+    \underbrace{kT N (N-1) \left( \frac{\partial}{\partial \xi}
+    \frac{1}{Z_N(\xi)} \right)
+    \int d\rr_3 \cdots \int d\rr_N~ e^{-\beta U_N(\xi)}
+    }_{ \equiv I_1}
+    \nonumber \\
+    &~~~~~~
+    +\underbrace{ kT \frac{N(N-1)}{Z_N(\xi)}
+    \int d\rr_3 \cdots \int d\rr_N~
+    \frac{\partial}{\partial \xi}e^{-\beta U_N(\xi)}
+    }_{\equiv I_2}.
+\end{align}
+The first integral is
+\begin{align}
+I_1 &= -\frac{kT N(N-1)}{Z_n(\xi)^2}
+    \left( \frac{\partial}{\partial \xi}
+        \underbrace{
+        \int d\rr_1 \cdots \int d\rr_N~ e^{-\beta U_N(\xi)}
+        }_{Z_N(\xi)}
+    \right)
+    \int d\rr_3 \cdots \int d\rr_N~ e^{-\beta U_N(\xi)} \\
+&= \rho^{(2)}(\rr_1,\rr_2;\xi) \frac{-kT}{Z_N(\xi)}
+    \int d\rr_1 \cdots \int d\rr_N~ e^{-\beta U_N(\xi)}
+        \frac{\partial}{\partial \xi}
+        \left( - \beta U_N(\xi) \right).
+\end{align}
+The $-\beta$ cancels the $-kT$ in the fraction, and the derivative in the integral is $\partial_\xi U_N = \sum_{j=2}^N u(\rr_1,\rr_j)$ (see \eqref{eq:kirkwood:UN_xi}).
+There are $N-1$ terms in this sum.
+Each term has the same contribution because the $\rr$'s are all integration parameters.
+Therefore, one can pick one of the terms in the sum, say $u(\rr_1,\rr_2)$, and multiply the result by $N-1$.
+This results in
+\begin{align}
+I_1 &= \rho^{(2)}(\rr_1,\rr_2;\xi)\frac{1}{N}
+    \int d\rr_1 \int d\rr_2 u(\rr_1,\rr_2)
+    \frac{N(N-1)}{Z_N(\xi)}
+    \int d\rr_3 \cdots \int d\rr_N~ e^{-\beta U_N(\xi)},
+\end{align}
+where I multiplied and divided by N because the second fraction and the second set of integrals is $\rho^{(2)}(\rr_1,\rr_2;\xi)$.
+So the integral is
+\begin{align}
+I_1 &= \rho^{(2)}(\rr_1,\rr_2;\xi)\frac{1}{N}
+    \int d\rr_1 \int d\rr_2 u(\rr_1,\rr_2)
+    \rho^{(2)}(\rr_1,\rr_2;\xi).
+\end{align}
 
-
-
+For the second integral in Eq. \eqref{eq:kirkwood:first_deriv} we need
+\begin{align}
+kT \frac{\partial}{\partial \xi} 
+    e^{-\beta U_N(\xi)} 
+&= - e^{-\beta U_N(\xi)} \frac{\partial}{\partial \xi}
+    U_N \\
+&= - e^{-\beta U_N(\xi)} \sum_{j=2}^N u(\rr_1,\rr_j) \\
+&=- e^{-\beta U_N(\xi)}\left(
+    u(\rr_1,\rr_2) +  \sum_{j=3}^N u(\rr_1,\rr_j)
+    \right).
+\end{align}
+The sum in the last line has $N-2$ terms, so one can
+replace the sum by a single term,say $u(\rr_1,\rr_3)$, and multiply by the number of terms.
+This gives
+\begin{align}
+I_2 &= -u(\rr_1,\rr_2) \frac{N(N-1)}{Z_N(\xi)}
+    \int d\rr_3 \cdots \int d\rr_N~ e^{-\beta U_N(\xi)}\\
+    &~~~~~- \frac{N(N-1)(N-2)}{Z_N(\xi)}
+        \int d\rr_3 u(\rr_1,\rr_3) \int d\rr_4 \cdots
+        \int d\rr_N~ e^{-\beta U_N(\xi)} \\
+&= -u(\rr_1,\rr_2)\rho^{(2)}(\rr_1,\rr_2;\xi) 
+    - \int d\rr_3 u(\rr_1,\rr_3) \rho^{(3)}(\rr_1,\rr_2,\rr_3;\xi).
+\end{align}

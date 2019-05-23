@@ -4,13 +4,13 @@ possible to solve it analytically and one needs te resort to
 numerical methods.
 The integral equations in this course have the form
 \begin{align}\label{general_integral_equation}
-f(r) = g(r) + \alpha \int dr' K[r,r';f],
+f(r) = g(r) + \alpha \int dr'~K[r,r';f],
 \end{align}
 where the function $g(r)$ and the kernel $K$ are known
 and the goal is to find the function $f(r)$.
 The kernel depends on the function $f(r)$ and the parameters $r$ and $r'$;
 for example, $K[r,r';f] = g(r')^2 h(r-r')$, with $h$ some other arbitrary function.
-Note that in this equation the functions $f(r)$, $g(r)$ and $h(r)$ are arbitrary and are not the Mayer function,
+Note that in this equation the functions $f(r)$, $g(r)$ and $h(r)$ are arbitrary and are not, nessecarily, the Mayer function,
 the pair-distribution function and the total-correlation function.
 The first step is to guess some acceptable form for the 
 function $f(r)$, denoted by $f_0(r)$.
@@ -25,23 +25,31 @@ Repeating this last step until the new approximation does not
 differ from the previous one, gives the final solution.
 So, the improved solution is
 \begin{align}
-f_{n+1}(r) = g(r) + \alpha \int dr' K[r,r';f_n],
+f_{n+1}(r) = g(r) + \alpha \int dr'~K[r,r';f_n],
 \end{align}
 and the final solution is obtained when $f_{n+1}(r) \approx f_n(r)$.
 \footnote{Of course, for the numerical evaluation of the integrals, they have to be approximated by a sum.
 For numerical algorithms for integration, see for example
-NUMERICAL RECIPES.}
+\cite{press1992numerical}.}
+In some cases one has a system of coupled equation.
+When this is the case, one has to solve multiple equations
+to get the improved solution.
+
 The convergence of this method can be improved by mixing the old with the new solution:
 \begin{align}
 f_{n+1}(r) = \eta f'_{n+1}(r) + (1-\eta) f_n(r),
 \end{align}
 with $0 < \eta \leq 1$ and 
 \begin{align}
-f'_{n+1}(r) = g(r) + \alpha \int dr' K[r,r';f_n].
+f'_{n+1}(r) = g(r) + \alpha \int dr'~K[r,r';f_n].
 \end{align}
 As a convergence criteria one can use, for example,
 \begin{align}
-\int dr \left( f'_{n+1}(r) - f_n(r) \right)^2 < \epsilon,
+\int dr~\left( f'_{n+1}(r) - f_n(r) \right)^2 < \epsilon,
+\end{align}
+or
+\begin{align}
+max_r \left\{ | f'_{n+1}(r) - f_n(r) | \right\} < \epsilon,
 \end{align}
 for some $\epsilon$.
 

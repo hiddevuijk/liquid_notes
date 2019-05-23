@@ -99,13 +99,13 @@ Equations \eqref{eq:py_c_d} and \eqref{eq:oz_d_c} can be used to find a numerica
 The Fourier transformation of a isotropic function in $\mathbb{R}^3$ is (see App.\ref{sec:ft_3d}):
 
 \begin{align}
-|\kk|F(|\kk|) = 4 \pi \int_0^\infty dr |\rr| f(|\rr|) \sin(|\kk||\rr|),
+|\kk|F(|\kk|) = 4 \pi \int_0^\infty dr~|\rr| f(|\rr|) \sin(|\kk||\rr|),
 \end{align}
 and the inverse transformation is:
 \begin{align}
-|\rr|f(|\rr|) = \frac{1}{2 \pi^2} \int_0^\infty dk |\kk| F(|\kk|) \sin(|\kk||\rr|).
+|\rr|f(|\rr|) = \frac{1}{2 \pi^2} \int_0^\infty dk~|\kk| F(|\kk|) \sin(|\kk||\rr|).
 \end{align}
-These definitions show that it is convenient to work with $|\rr|f(|\rr|)$ and $|\kk|F(|\kk|)$ in stead of $f(|\rr|)$ and $F(|\kk|)$, when does these transformation repeatedly.
+These definitions show that it is convenient to work with $|\rr|f(|\rr|)$ and $|\kk|F(|\kk|)$ in stead of $f(|\rr|)$ and $F(|\kk|)$, when one does these transformation repeatedly.
 It is therfore expedient to define the following four new functions:
 \begin{align}
 \tilde{c}(r) &= r c(r), \\
@@ -117,17 +117,17 @@ and use these in the algorithm.
 The relations between $\tilde{c}(r)$ and $\tilde{C}(k)$, and
 $\tilde{d}(r)$ and $\tilde{D}(k)$ are
 \begin{align}\label{eq:c_tilde_ft_pair}
-\tilde{C}(k) = 4 \pi \int_0^\infty dk 
-    \tilde{C}(k) sin(k r), ~
-\tilde{c}(r) = \frac{1}{2 \pi^2} \int_0^\infty dk 
-    \tilde{c}(r) sin(k r),
+\tilde{C}(k) = 4 \pi \int_0^\infty dr~
+    \tilde{c}(r) sin(k r), ~
+\tilde{c}(r) = \frac{1}{2 \pi^2} \int_0^\infty dk~
+    \tilde{C}(k) sin(k r),
 \end{align}
 and
 \begin{align}\label{eq:d_tilde_ft_pair}
-\tilde{D}(k) = 4 \pi \int_0^\infty dk 
-    \tilde{D}(k) sin(k r), ~
-\tilde{c}(r) = \frac{1}{2 \pi^2} \int_0^\infty dk 
-    \tilde{c}(r) sin(k r).
+\tilde{D}(k) = 4 \pi \int_0^\infty dr~
+    \tilde{d}(r) sin(k r), ~
+\tilde{d}(r) = \frac{1}{2 \pi^2} \int_0^\infty dk~
+    \tilde{D}(k) sin(k r).
 \end{align}
 The Ornstein-Zernike equation for the functions $\tilde{C}(k)$ and $\tilde{D}(k)$ is
 \begin{align}\label{eq:oz_D_tilde_C_tilde}
@@ -167,7 +167,7 @@ h(r) =
 \end{enumerate}
 As a convergence critecion one can use, for example,
 \begin{align}
-\int dr \left[ \tilde{d}_n(r) - \tilde{d}'_{n+1}(r) \right]
+\int dr~\left[ \tilde{d}_n(r) - \tilde{d}'_{n+1}(r) \right]
 < \epsilon.
 \end{align}
 The parameters for the numerical solution are: 1) N, the number of data point for the functions;

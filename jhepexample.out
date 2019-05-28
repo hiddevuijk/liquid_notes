@@ -5,42 +5,47 @@
 \BOOKMARK [1][-]{section.3}{Distribution Functions}{}% 5
 \BOOKMARK [2][-]{subsection.3.1}{From the Probability density to Correlation Functions}{section.3}% 6
 \BOOKMARK [3][-]{subsubsection.3.1.1}{The Pair-Distribution Function from Scattering Experiments}{subsection.3.1}% 7
-\BOOKMARK [2][-]{subsection.3.2}{The Potential of Mean Force}{section.3}% 8
-\BOOKMARK [3][-]{subsubsection.3.2.1}{The Superposition Approximation}{subsection.3.2}% 9
-\BOOKMARK [2][-]{subsection.3.3}{The Ornstein-Zernike Equation}{section.3}% 10
-\BOOKMARK [2][-]{subsection.3.4}{Density Expansions}{section.3}% 11
-\BOOKMARK [3][-]{subsubsection.3.4.1}{Distribution Functions}{subsection.3.4}% 12
-\BOOKMARK [3][-]{subsubsection.3.4.2}{Correlation Functions}{subsection.3.4}% 13
-\BOOKMARK [3][-]{subsubsection.3.4.3}{The Percus-Yevick Equation}{subsection.3.4}% 14
-\BOOKMARK [1][-]{section.4}{Integral Equations for g\(r\)}{}% 15
-\BOOKMARK [2][-]{subsection.4.1}{The Kirkwood Equation}{section.4}% 16
-\BOOKMARK [2][-]{subsection.4.2}{The Born-Green-Yvon Equation}{section.4}% 17
-\BOOKMARK [2][-]{subsection.4.3}{The Percus-Yevick Equation}{section.4}% 18
-\BOOKMARK [2][-]{subsection.4.4}{Density Expansion of the Percus-Yevick Equation}{section.4}% 19
-\BOOKMARK [2][-]{subsection.4.5}{Equations of State for Hard Spheres}{section.4}% 20
-\BOOKMARK [3][-]{subsubsection.4.5.1}{Percus-Yevick}{subsection.4.5}% 21
-\BOOKMARK [3][-]{subsubsection.4.5.2}{The Carnahan-Starling}{subsection.4.5}% 22
-\BOOKMARK [1][-]{section.5}{Numerical Solutions}{}% 23
-\BOOKMARK [2][-]{subsection.5.1}{Numerical Solutions to Integral Equations}{section.5}% 24
-\BOOKMARK [2][-]{subsection.5.2}{PY + OZ in Fourier Space}{section.5}% 25
-\BOOKMARK [3][-]{subsubsection.5.2.1}{The Indirect Correlation Function}{subsection.5.2}% 26
-\BOOKMARK [3][-]{subsubsection.5.2.2}{One More Change to the Naive Algorithm}{subsection.5.2}% 27
-\BOOKMARK [3][-]{subsubsection.5.2.3}{The Final Algorithm}{subsection.5.2}% 28
-\BOOKMARK [2][-]{subsection.5.3}{PY + OZ in Real Space}{section.5}% 29
-\BOOKMARK [3][-]{subsubsection.5.3.1}{Percus-Yevick Equation in Bipolar Coordinates}{subsection.5.3}% 30
-\BOOKMARK [3][-]{subsubsection.5.3.2}{The Algorithm}{subsection.5.3}% 31
-\BOOKMARK [2][-]{subsection.5.4}{BGY}{section.5}% 32
-\BOOKMARK [3][-]{subsubsection.5.4.1}{BGY in Bipolar Coordinates}{subsection.5.4}% 33
-\BOOKMARK [3][-]{subsubsection.5.4.2}{The Algorithm}{subsection.5.4}% 34
-\BOOKMARK [1][-]{section.6}{Perturbation Theory}{}% 35
-\BOOKMARK [2][-]{subsection.6.1}{General Theory and the Van Der Waals Equation}{section.6}% 36
-\BOOKMARK [2][-]{subsection.6.2}{Barker-Henderson Theory}{section.6}% 37
-\BOOKMARK [2][-]{subsection.6.3}{Chandler-Weeks-Anderson Theory}{section.6}% 38
-\BOOKMARK [1][-]{appendix.A}{Basic Statistical Mechanics}{}% 39
-\BOOKMARK [2][-]{subsection.A.1}{Ensembles}{appendix.A}% 40
-\BOOKMARK [3][-]{subsubsection.A.1.1}{The Microcanonical Ensemble}{subsection.A.1}% 41
-\BOOKMARK [3][-]{subsubsection.A.1.2}{The Canonical Ensemble}{subsection.A.1}% 42
-\BOOKMARK [3][-]{subsubsection.A.1.3}{The Grand Canonical Ensemble}{subsection.A.1}% 43
-\BOOKMARK [2][-]{subsection.A.2}{Perfect Gasses}{appendix.A}% 44
-\BOOKMARK [1][-]{appendix.B}{The Kirkwood Equation}{}% 45
-\BOOKMARK [1][-]{appendix.C}{Fourier Transformation of Spherically symmetric Functions in R3}{}% 46
+\BOOKMARK [2][-]{subsection.3.2}{Thermodynamics from the pair-correlation function}{section.3}% 8
+\BOOKMARK [3][-]{subsubsection.3.2.1}{Energy}{subsection.3.2}% 9
+\BOOKMARK [3][-]{subsubsection.3.2.2}{Pressure}{subsection.3.2}% 10
+\BOOKMARK [3][-]{subsubsection.3.2.3}{Chemical Potential}{subsection.3.2}% 11
+\BOOKMARK [3][-]{subsubsection.3.2.4}{Surface Tension}{subsection.3.2}% 12
+\BOOKMARK [2][-]{subsection.3.3}{The Potential of Mean Force}{section.3}% 13
+\BOOKMARK [3][-]{subsubsection.3.3.1}{The Superposition Approximation}{subsection.3.3}% 14
+\BOOKMARK [2][-]{subsection.3.4}{The Ornstein-Zernike Equation}{section.3}% 15
+\BOOKMARK [2][-]{subsection.3.5}{Density Expansions}{section.3}% 16
+\BOOKMARK [3][-]{subsubsection.3.5.1}{Distribution Functions}{subsection.3.5}% 17
+\BOOKMARK [3][-]{subsubsection.3.5.2}{Correlation Functions}{subsection.3.5}% 18
+\BOOKMARK [1][-]{section.4}{Integral Equations for g\(r\)}{}% 19
+\BOOKMARK [2][-]{subsection.4.1}{The Kirkwood Equation}{section.4}% 20
+\BOOKMARK [3][-]{subsubsection.4.1.1}{interpretation with potential of mean force}{subsection.4.1}% 21
+\BOOKMARK [2][-]{subsection.4.2}{The Born-Green-Yvon Equation}{section.4}% 22
+\BOOKMARK [2][-]{subsection.4.3}{The Percus-Yevick Equation}{section.4}% 23
+\BOOKMARK [2][-]{subsection.4.4}{Density Expansion of the Percus-Yevick Equation}{section.4}% 24
+\BOOKMARK [2][-]{subsection.4.5}{Equations of State for Hard Spheres}{section.4}% 25
+\BOOKMARK [3][-]{subsubsection.4.5.1}{Percus-Yevick}{subsection.4.5}% 26
+\BOOKMARK [3][-]{subsubsection.4.5.2}{The Carnahan-Starling}{subsection.4.5}% 27
+\BOOKMARK [1][-]{section.5}{Numerical Solutions}{}% 28
+\BOOKMARK [2][-]{subsection.5.1}{Numerical Solutions to Integral Equations}{section.5}% 29
+\BOOKMARK [2][-]{subsection.5.2}{PY + OZ in Fourier Space}{section.5}% 30
+\BOOKMARK [3][-]{subsubsection.5.2.1}{The Indirect Correlation Function}{subsection.5.2}% 31
+\BOOKMARK [3][-]{subsubsection.5.2.2}{One More Change to the Naive Algorithm}{subsection.5.2}% 32
+\BOOKMARK [3][-]{subsubsection.5.2.3}{The Final Algorithm}{subsection.5.2}% 33
+\BOOKMARK [2][-]{subsection.5.3}{PY + OZ in Real Space}{section.5}% 34
+\BOOKMARK [3][-]{subsubsection.5.3.1}{Percus-Yevick Equation in Bipolar Coordinates}{subsection.5.3}% 35
+\BOOKMARK [3][-]{subsubsection.5.3.2}{The Algorithm}{subsection.5.3}% 36
+\BOOKMARK [2][-]{subsection.5.4}{BGY}{section.5}% 37
+\BOOKMARK [3][-]{subsubsection.5.4.1}{BGY in Bipolar Coordinates}{subsection.5.4}% 38
+\BOOKMARK [3][-]{subsubsection.5.4.2}{The Algorithm}{subsection.5.4}% 39
+\BOOKMARK [1][-]{section.6}{Perturbation Theory}{}% 40
+\BOOKMARK [2][-]{subsection.6.1}{General Theory and the Van Der Waals Equation}{section.6}% 41
+\BOOKMARK [2][-]{subsection.6.2}{Barker-Henderson Theory}{section.6}% 42
+\BOOKMARK [2][-]{subsection.6.3}{Chandler-Weeks-Anderson Theory}{section.6}% 43
+\BOOKMARK [1][-]{appendix.A}{Basic Statistical Mechanics}{}% 44
+\BOOKMARK [2][-]{subsection.A.1}{Ensembles}{appendix.A}% 45
+\BOOKMARK [3][-]{subsubsection.A.1.1}{The Microcanonical Ensemble}{subsection.A.1}% 46
+\BOOKMARK [3][-]{subsubsection.A.1.2}{The Canonical Ensemble}{subsection.A.1}% 47
+\BOOKMARK [3][-]{subsubsection.A.1.3}{The Grand Canonical Ensemble}{subsection.A.1}% 48
+\BOOKMARK [2][-]{subsection.A.2}{Perfect Gasses}{appendix.A}% 49
+\BOOKMARK [1][-]{appendix.B}{The Liquid-Gas Transition}{}% 50
+\BOOKMARK [1][-]{appendix.C}{Fourier Transformation of Spherically symmetric Functions in R3}{}% 51

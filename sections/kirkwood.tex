@@ -119,6 +119,41 @@ kT\frac{\partial}{\partial \xi}
         \rho^{(1)}(\rr_1',\rr_2';\xi).
 \nonumber
 \end{align}
+With this Eq. \eqref{eq:kirkwood:start} becomes
+\begin{align}
+kT ln\left(\rho^{(n)}(\rr_1,\cdots,\rr_n;\xi) \right)
+=& kT ln\left(\rho^{(n)}(\rr_1,\cdots,\rr_n;\xi=0)\right)
+        -\xi \sum_{j=2}^{n} u(\rr_1,\rr_j)
+        \nonumber \\
+ &~~ -\int_0^\xi d\xi' \int d\rr_{n+1}' u(\rr_1,\rr_{n+1}')
+        \frac{ \rho^{(n+1)}(\rr_1,\cdots,\rr_{n+1}';\xi')}
+            { \rho^{(n)}(\rr_1,\cdots,\rr_{n};\xi')}
+    \nonumber \\
+&~-\int_0^\xi d\xi' \frac{1}{N} \int d\rr_1' \int d\rr_2' u(\rr_1',\rr_2')
+        \rho^{(1)}(\rr_1',\rr_2';\xi').
+\nonumber
+\end{align}
+The n-body density eveluated at $\xi=0$ is
+\begin{align}
+\rho^{(n)}(\rr_1,\cdots,\rr_n;\xi=0) 
+&= \frac{N!}{(N-n)!} \frac{1}{Z_N(\xi=0)}
+    \int d\rr_{n+1} \cdots \int d\rr_N 
+    e^{-\beta U_N(\xi=0)}.
+\nonumber
+\end{align}
+n configurational integral with $\xi=0$
+is the configurational integral of $N-1$ particles times the 
+volume (see ...), and
+$U_N(\rr_1,\cdots,\rr_N;\xi=0) = U_{N-1}(\rr_2,\cdots,\rr_N)$,
+so
+\begin{align}
+\rho^{(n)}(\rr_1,\cdots,\rr_n;\xi=0) 
+&= \frac{N!}{(N-n)!} \frac{1}{Z_N(\xi=0)}
+    \int d\rr_{n+1} \cdots \int d\rr_N 
+    e^{-\beta U_N(\xi=0)}.
+\nonumber
+\end{align}
+
 
 \subsubsection{interpretation with potential of mean force}
 

@@ -18,7 +18,7 @@
 \contentsline {subsubsection}{\numberline {3.5.2}Correlation Functions}{5}{subsubsection.3.5.2}
 \contentsline {section}{\numberline {4}Integral Equations for $g(r)$}{5}{section.4}
 \contentsline {subsection}{\numberline {4.1}The Kirkwood Equation}{6}{subsection.4.1}
-\contentsline {subsubsection}{\numberline {4.1.1}interpretation with potential of mean force}{7}{subsubsection.4.1.1}
+\contentsline {subsubsection}{\numberline {4.1.1}interpretation with potential of mean force}{8}{subsubsection.4.1.1}
 \contentsline {subsection}{\numberline {4.2}The Born-Green-Yvon Equation}{10}{subsection.4.2}
 \contentsline {subsection}{\numberline {4.3}The Percus-Yevick Equation}{10}{subsection.4.3}
 \contentsline {subsection}{\numberline {4.4}Density Expansion of the Percus-Yevick Equation}{10}{subsection.4.4}

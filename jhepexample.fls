@@ -80,6 +80,10 @@ INPUT /usr/share/texmf/tex/latex/base/fontenc.sty
 INPUT /usr/share/texmf/tex/latex/base/t1enc.def
 INPUT /usr/share/texmf/tex/latex/base/t1enc.def
 INPUT /usr/share/texmf/fonts/tfm/jknappen/ec/ecrm1095.tfm
+INPUT /usr/share/texmf/tex/latex/draftwatermark/draftwatermark.sty
+INPUT /usr/share/texmf/tex/latex/draftwatermark/draftwatermark.sty
+INPUT /usr/share/texmf/tex/latex/everypage/everypage.sty
+INPUT /usr/share/texmf/tex/latex/everypage/everypage.sty
 INPUT jhepexample.aux
 INPUT jhepexample.aux
 OUTPUT jhepexample.aux
@@ -110,6 +114,7 @@ INPUT /usr/share/texmf/fonts/tfm/jknappen/ec/ecss1728.tfm
 INPUT /usr/share/texmf/fonts/tfm/jknappen/ec/ecsx1728.tfm
 INPUT /usr/share/texmf/fonts/tfm/jknappen/ec/ecbx1095.tfm
 INPUT /usr/share/texmf/fonts/tfm/jknappen/ec/ecsx1095.tfm
+INPUT /usr/share/texmf/fonts/tfm/jknappen/ec/ecrm3583.tfm
 INPUT /usr/share/texmf/fonts/vf/adobe/helvetic/phvbc7t.vf
 INPUT /usr/share/texmf/fonts/tfm/adobe/helvetic/phvb8r.tfm
 INPUT /usr/share/texmf/fonts/tfm/adobe/helvetic/phvb8r.tfm
